@@ -16,10 +16,10 @@ import time
 import math
 import RPi.GPIO as GPIO
 import struct
-
+# bananaPi use the I2C-2 not I2C-1
 rev = GPIO.RPI_REVISION
 if rev == 2 or rev == 3:
-	bus = smbus.SMBus(1)
+	bus = smbus.SMBus(2)
 else:
 	bus = smbus.SMBus(0)
 
